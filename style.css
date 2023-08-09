@@ -4,3 +4,11 @@
     border: solid black 2px;
     margin: 5px;
 }
+
+.button {
+    margin: 5px;
+    color: black;
+}
+.button:hover{
+    background-color: red;
+}
