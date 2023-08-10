@@ -1,16 +1,30 @@
 var starting=document.querySelector("#start");
 var canvas=document.querySelector("#preview_image");
 var canvas_ctx=canvas.getContext("2d");
-// var st_color="green";
+var st_color="yellow";
+
+var ending=document.querySelector("#end");
+var end_color="red";
+
+var x,y,pixel;
 
 starting.onclick=function() {
     // canvas.addEventListener("click ",(event)=>mark_point(event));
     // canvas.addEventListener("click",function(event) {mark_point(event)});
-    canvas.onclick=function(event) {mark_point(event)};
+    x=-1;
+    y=-1;
+    canvas.onclick=function(event,st_color) {mark_point(event,st_color)};
 }
 
-var x=-1,y=-1,pixel;
-function mark_point(event) {
+ending.onclick=function() {
+    x=-1;
+    y=-1;
+    canvas.onclick=function(event,end_color) {mark_point(event,end_color)};     
+}
+
+
+
+function mark_point(event,st_color) {
     
     // if a point has been marked and another click is detected then erase the previous one
     if(x>=0 && y>=0) {
@@ -26,7 +40,7 @@ function mark_point(event) {
     pixel=canvas_ctx.getImageData(x,y,5,5);
     
     // mark the starting point in green
-    canvas_ctx.fillStyle="green";
+    canvas_ctx.fillStyle=st_color;
     canvas_ctx.fillRect(x,y,5,5);
     canvas.onclick=function(event) {mark_point(event)};
 }
