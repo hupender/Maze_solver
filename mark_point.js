@@ -23,6 +23,7 @@ function mark_point_st(event) {
     // get the coordinates of the marked point and subtract from canvas coordinates to get relative position
     var x=Math.floor(event.clientX-coord.left);
     var y=Math.floor(event.clientY-coord.top);
+    document.querySelector("#st_point").innerHTML="Selected Point : "+ x+" , "+y;
 
     // get the orignal pixel so that if another click is detected the previous is restored
     pixel_st=canvas_ctx.getImageData(x,y,4,4);
@@ -56,6 +57,7 @@ function mark_point_end(event,color) {
     // get the coordinates of the marked point and subtract from canvas coordinates to get relative position
     var x=Math.floor(event.clientX-coord.left);
     var y=Math.floor(event.clientY-coord.top);
+    document.querySelector("#end_point").innerHTML="Selected Point : "+ x+" , "+y;
 
     // get the orignal pixel so that if another click is detected the previous is restored
     pixel_end=canvas_ctx.getImageData(x,y,4,4);
