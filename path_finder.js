@@ -5,5 +5,8 @@ solver.onclick=function() {
     }
     else {
         //both points are marked now solve the maze
+        var src_x=previous_st_x , src_y=previous_st_y;
+        var dest_x=previous_end_x , dest_y=previous_end_y;
+        
     }
 }
