@@ -26,11 +26,11 @@ function mark_point_st(event) {
     document.querySelector("#st_point").innerHTML="Selected Point : "+ x+" , "+y;
 
     // get the orignal pixel so that if another click is detected the previous is restored
-    pixel_st=canvas_ctx.getImageData(x,y,4,4);
+    pixel_st=canvas_ctx.getImageData(x,y,2,2);
     
     // mark the starting point in green
     canvas_ctx.fillStyle="green";
-    canvas_ctx.fillRect(x,y,4,4);
+    canvas_ctx.fillRect(x,y,2,2);
     // update the previous x and y
     previous_st_x=x;
     previous_st_y=y;
@@ -38,7 +38,7 @@ function mark_point_st(event) {
 }
 
 
-// var a=-1,b=-1,pixel_end;
+
 var previous_end_x=-1,previous_end_y=-1,pixel_end;
 ending.onclick=function() {
     canvas.onclick=function(event) {mark_point_end(event)};
@@ -60,11 +60,11 @@ function mark_point_end(event,color) {
     document.querySelector("#end_point").innerHTML="Selected Point : "+ x+" , "+y;
 
     // get the orignal pixel so that if another click is detected the previous is restored
-    pixel_end=canvas_ctx.getImageData(x,y,4,4);
+    pixel_end=canvas_ctx.getImageData(x,y,2,2);
     
     // mark the starting point in green
     canvas_ctx.fillStyle="red";
-    canvas_ctx.fillRect(x,y,4,4);
+    canvas_ctx.fillRect(x,y,2,2);
     //update previous x and y
     previous_end_x=x;
     previous_end_y=y;

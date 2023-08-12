@@ -31,13 +31,21 @@ class queue {
         }
         this.size++;
     }
-    dequeue() {
+    front() {
         if(this.size>0) {
             let res=new Pair();
             res=this.first.pair;
             this.first=this.first.next;
             this.size--;
             return res;
+        }
+    }
+    is_empty() {
+        if(this.size==0) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
