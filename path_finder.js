@@ -1,12 +1,11 @@
 var solver=document.querySelector("#solve");
-var canvas2_ctx=canvas2.getContext("2d");
 solver.onclick=function() {
     if(previous_end_x<0 || previous_st_x<0) {
         prompt("Slect both starting and ending points");
     }
     else {
         //both points are marked now solve the maze
-        canvas2_ctx.clearRect(0,0,canvas2.width,canvas2.height);
+        canvas_ctx.putImageData(image_data,0,0);
         var src_x=previous_st_x , src_y=previous_st_y;
         var dest_x=previous_end_x , dest_y=previous_end_y;
         var que=new queue();
@@ -92,6 +91,7 @@ function check_color(x,y) {
 function fill_color(id) {
     var x=id/upper_x;
     var y=id%upper_x;
-    canvas2_ctx.fillStyle="blue";
-    canvas2_ctx.fillRect(x,y,1,1);
+    // console.log("X is : "+x+ " and y is : " + y);
+    canvas_ctx.fillStyle="blue";
+    canvas_ctx.fillRect(x,y,1,1); 
 }

@@ -3,7 +3,7 @@ input.onchange = function() {get_preview()};
 
 var canvas=document.querySelector("#preview_image");
 var canvas_ctx=canvas.getContext("2d");
-
+var image_data;
 function get_preview() {
     var img=new Image();
     img.src=URL.createObjectURL(input.files[0]);
@@ -12,7 +12,7 @@ function get_preview() {
     img.width=canvas.width;
     img.onload=function() { 
         canvas_ctx.drawImage(img,0,0,img.width,img.height);
-        var image_data=canvas_ctx.getImageData(0,0,canvas.width,canvas.height);
+        image_data=canvas_ctx.getImageData(0,0,canvas.width,canvas.height);
         var data=image_data.data;
         for(var i=0;i<data.length;i+=4) {
             var avg=(data[i]+data[i+1]+data[i+2])/3;
