@@ -3,10 +3,18 @@
     height: 300px;
     border: solid black 2px;
     margin: 5px;
+    position: absolute;
+}
+
+#canvas2{
+    width: 300px;
+    height: 300px;
+    border: solid black 2px;
+    margin: 5px;
 }
 
 .button {
-    margin: 2px;
+    margin: 5px;
     color: black;
 }
 .button:hover{
