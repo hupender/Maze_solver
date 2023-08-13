@@ -1,4 +1,5 @@
 var solver=document.querySelector("#solve");
+var reseter=document.querySelector("#reset");
 solver.onclick=function() {
     if(image_data==undefined) {
         // prompt("Take input");
@@ -6,7 +7,7 @@ solver.onclick=function() {
     }
     else if(previous_end_x<0 || previous_st_x<0) {
         // prompt("Slect both starting and ending points");
-        info.innerHTML="Info: Select both starting and ending  points"; 
+        info.innerHTML="Info: Select both Starting and Ending  points"; 
     }
     else {
         //both points are marked now solve the maze
@@ -99,4 +100,9 @@ function fill_color(id) {
     // console.log("X is : "+x+ " and y is : " + y);
     canvas_ctx.fillStyle="blue";
     canvas_ctx.fillRect(x,y,1,1); 
+}
+reseter.onclick=function() {
+    console.log("cleared");
+    image_data=undefined;
+    canvas_ctx.clearRect(0,0,canvas.width,canvas.height);
 }
