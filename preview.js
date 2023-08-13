@@ -1,5 +1,6 @@
 var input=document.querySelector("#input_image");
 input.onchange = function() {get_preview()};
+info=document.querySelector("#info");
 
 var canvas=document.querySelector("#preview_image");
 var canvas_ctx=canvas.getContext("2d");

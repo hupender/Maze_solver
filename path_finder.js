@@ -1,7 +1,12 @@
 var solver=document.querySelector("#solve");
 solver.onclick=function() {
-    if(previous_end_x<0 || previous_st_x<0) {
-        prompt("Slect both starting and ending points");
+    if(image_data==undefined) {
+        // prompt("Take input");
+        info.innerHTML="Info: Take image input first"; 
+    }
+    else if(previous_end_x<0 || previous_st_x<0) {
+        // prompt("Slect both starting and ending points");
+        info.innerHTML="Info: Select both starting and ending  points"; 
     }
     else {
         //both points are marked now solve the maze

@@ -9,6 +9,7 @@ var previous_st_x=-1,previous_st_y=-1,pixel_st;
 starting.onclick=function() {
     // canvas.addEventListener("click ",(event)=>mark_point(event));
     // canvas.addEventListener("click",function(event) {mark_point(event)});
+    info.innerHTML="Info: Select starting point"; 
     canvas.onclick=function(event) {mark_point_st(event)};
 }
 
@@ -41,6 +42,7 @@ function mark_point_st(event) {
 
 var previous_end_x=-1,previous_end_y=-1,pixel_end;
 ending.onclick=function() {
+    info.innerHTML="Info: Select ending point"; 
     canvas.onclick=function(event) {mark_point_end(event)};
 }
 
