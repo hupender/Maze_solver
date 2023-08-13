@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="black-line-maze-icon-vector-9416882.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Maze Solver</h1>
+    <div id="header">
+        <h1>Maze Solver</h1>
+    </div>
     <input type="file" id="input_image" accept="image/*">
     <br>
     <canvas id="preview_image" class="preview" height="300px" width="300px"></canvas>
@@ -17,13 +19,21 @@
     <p id="info">Info:</p>
     <br>
     <button class="button" id="start">Select Starting Point</button>
-    <p id="st_point">Selected Point : </p>
+    <p id="st_point" class="point">Selected Point : </p>
     <br>
     <button class="button" id="end">Select Ending Point</button>
-    <p id="end_point">Selected Point : </p>
+    <p id="end_point" class="point">Selected Point : </p>
     <br>
     <button class="button" id="solve">Solve Maze</button>
     <button class="button" id="reset">Reset</button>
+    <div>
+        <h2>Instructions : </h2>
+        <p>1. Select an image of maze from device.</p>
+        <p>2. Mark Starting and Ending Points.</p>
+        <p>3. Click on Solve Maze to Solve the Maze.</p>
+        <p>4. Reset to take another image input.</p>
+    </div>
+    <footer>A maze solver with responsive web design</footer>
 
     <script src="preview.js"></script>
     <script src="mark_point.js"></script>
