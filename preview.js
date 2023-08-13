@@ -15,10 +15,19 @@ function get_preview() {
         image_data=canvas_ctx.getImageData(0,0,canvas.width,canvas.height);
         var data=image_data.data;
         for(var i=0;i<data.length;i+=4) {
-            var avg=(data[i]+data[i+1]+data[i+2])/3;
-            data[i]=avg;
-            data[i+1]=avg;
-            data[i+2]=avg;
+            // var avg=(data[i]+data[i+1]+data[i+2])/3;
+            // data[i]=avg;
+            // data[i+1]=avg;
+            // data[i+2]=avg;
+            var sum=data[i]+data[i+1]+data[i+2];
+            var color_val=0;
+            if(sum>383) {
+                color_val=255;
+            }
+            data[i]=color_val;
+            data[i+1]=color_val;
+            data[i+2]=color_val;
+            data[i+3]=255;
         }
         canvas_ctx.putImageData(image_data,0,0);
     }
